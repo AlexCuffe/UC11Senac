@@ -76,4 +76,30 @@ public class ProdutosDAO {
 
     }
 
+    public int venderProdutos(ProdutosDTO pro) {
+
+        int status;
+        String sql = "Update produtos Set status = ? where id = ?";
+
+        if (!pro.getStatus().equals("Vendido")) {
+            try {
+                prep = conn.connectDB().prepareStatement(sql);
+                prep.setString(1, "Vendido");
+                prep.setInt(2, pro.getId());
+
+                status = prep.executeUpdate();
+                return status;
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao Efetuar a Venda " + ex.getMessage());
+                return 0;
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Produto Já está Vendido, Venda Não Efetuada");
+            return 0;
+        }
+
+    }
+
 }
