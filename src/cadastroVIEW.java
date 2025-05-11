@@ -209,7 +209,7 @@ public class cadastroVIEW extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Todos os Campos Devem ser preenchidos");
             return false;
         }
-        if (!cadastroValor.getText().matches("[0-9]{10}")) {
+        if (!cadastroValor.getText().matches("[0-9]{1,10}")) {
             JOptionPane.showMessageDialog(null, "O valor do produto não pode conter virgulas ou pontos! \n Apenas numeros inteiros serão aceitos");
             return false;
         } else {
