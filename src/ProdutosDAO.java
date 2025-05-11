@@ -26,8 +26,17 @@ public class ProdutosDAO {
             prep.setInt(2, produto.getValor());
             prep.setString(3,produto.getStatus());
             status = prep.executeUpdate();
+            
+            
+            if(status == 1){
+                JOptionPane.showMessageDialog(null, "Produto Cadastrado com Sucesso");
+            } else {
+                JOptionPane.showConfirmDialog(null, "Produto Não Cadastrado");
+            }
+            
             return status;
-
+            
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Conectar: " + ex.getMessage());
             return ex.getErrorCode();

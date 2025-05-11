@@ -25,7 +25,7 @@ public class conectaDAO {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url, usuario, senha);
-            JOptionPane.showMessageDialog(null, "Conexão Realizada com Sucesso");
+            System.out.println("Conexão Realizada com Sucesso");
             return conn;
 
         } catch (ClassNotFoundException | SQLException erro) {
