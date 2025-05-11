@@ -1,0 +1,59 @@
+[33mcommit 7386646f797f54a891bc7103c6e150d2b052e692[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Alex Cuffe <contxpr@outlook.com>
+Date:   Sun May 11 18:44:50 2025 -0300
+
+    Correção Validação de Campos
+
+[33mcommit c92d557305b8291cdca3a45171395455652f89a1[m
+Author: Alex Cuffe <contxpr@outlook.com>
+Date:   Sun May 11 18:07:34 2025 -0300
+
+    Correção Listar Produtos ListagemVIEW
+
+[33mcommit 353b9b8063095ed8a4fe1115649f3f710545d3a5[m
+Author: Alex Cuffe <contxpr@outlook.com>
+Date:   Sun May 11 18:04:59 2025 -0300
+
+    Implementação Função Listar
+
+[33mcommit f6a4863614dd3575de9ec9aeaaf5f433bbc75468[m
+Author: Alex Cuffe <contxpr@outlook.com>
+Date:   Sun May 11 17:28:48 2025 -0300
+
+    Inclusão Validaçao de Campos CadastroView
+
+[33mcommit 9e624267ded3f4348e137aafda0e1b3d76072d45[m
+Author: Alex Cuffe <contxpr@outlook.com>
+Date:   Sun May 11 17:02:19 2025 -0300
+
+    Atualização do Connector mysql Para 9.3.0
+
+[33mcommit 2289dad73e5dd35a4a328fedf5a8ad2d08e8b844[m
+Author: Alex Cuffe <contxpr@outlook.com>
+Date:   Sun May 11 16:50:19 2025 -0300
+
+    Implementação Função Cadastrar Produto
+
+[33mcommit 3cbac243275beec9d5ba88439083ca84ed3f4202[m
+Author: Alex Cuffe <contxpr@outlook.com>
+Date:   Sun May 11 16:21:56 2025 -0300
+
+    Ajuste Conexão
+
+[33mcommit 17582f8d1b8ed72335796ce778e063b3b6642852[m
+Author: Alex Cuffe <contxpr@outlook.com>
+Date:   Sun May 11 15:37:15 2025 -0300
+
+    Alteração Tela Inicial
+
+[33mcommit c58b392775d3350c89266ce1f887ba7e54f20b53[m
+Author: AlexCuffe <contxpr@outlook.com>
+Date:   Mon Apr 28 21:49:19 2025 -0300
+
+    Criando README.md
+
+[33mcommit 37d816e75773b0c61c0c3dcc80728090ffcfbff2[m
+Author: Alex Cuffe <contxpr@outlook.com>
+Date:   Mon Apr 28 21:06:25 2025 -0300
+
+    Projeto Inicial
