@@ -130,20 +130,21 @@ public class ProdutosDAO {
 
     public boolean verificaStatus(int id) {
 
-        String sql = "Select status from produtos where id = ?";
+        String sql = "Select * from produtos where id = ?";
 
         try {
 
             int status;
             ResultSet rs;
-            String stProd;
+            ProdutosDTO p = new ProdutosDTO();
 
             prep = conn.connectDB().prepareStatement(sql);
             prep.setInt(1, id);
             rs = prep.executeQuery();
-            stProd = rs.getString("status");
+            rs.next();
+            p.setStatus(rs.getString("status"));
 
-            if (stProd.equalsIgnoreCase("Vendido")) {
+            if (p.getStatus().equalsIgnoreCase("Vendido")) {
                 JOptionPane.showMessageDialog(null, "O Produto já está Vendido \n Venda Não Efetuada");
                 return false;
             } else {
