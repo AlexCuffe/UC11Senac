@@ -81,25 +81,23 @@ public class ProdutosDAO {
         int status;
         String sql = "Update produtos Set status = ? where id = ?";
 
-            try {
-                prep = conn.connectDB().prepareStatement(sql);
-                prep.setString(1, "Vendido");
-                prep.setInt(2, pro);
+        try {
+            prep = conn.connectDB().prepareStatement(sql);
+            prep.setString(1, "Vendido");
+            prep.setInt(2, pro);
 
-                status = prep.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Venda Efetuada com Sucesso");
-                return status;
+            status = prep.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Venda Efetuada com Sucesso");
+            return status;
 
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Erro ao Efetuar a Venda " + ex.getMessage());
-                return 0;
-            }
-
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Efetuar a Venda " + ex.getMessage());
+            return 0;
         }
 
-    
+    }
 
-        public List<ProdutosDTO> listarProdutosVendidos() {
+    public List<ProdutosDTO> listarProdutosVendidos() {
         String sql = "SELECT * FROM produtos where status = ?";
 
         try {
@@ -129,7 +127,35 @@ public class ProdutosDAO {
         }
 
     }
-    
-    
-    
+
+    public boolean verificaStatus(int id) {
+
+        String sql = "Select status from produtos where id = ?";
+
+        try {
+
+            int status;
+            ResultSet rs;
+            String stProd;
+
+            prep = conn.connectDB().prepareStatement(sql);
+            prep.setInt(1, id);
+            rs = prep.executeQuery();
+            stProd = rs.getString("status");
+
+            if (stProd.equalsIgnoreCase("Vendido")) {
+                JOptionPane.showMessageDialog(null, "O Produto já está Vendido \n Venda Não Efetuada");
+                return false;
+            } else {
+                return true;
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Consultar o Status do Produto " + ex.getMessage());
+            return false;
+
+        }
+
+    }
+
 }
