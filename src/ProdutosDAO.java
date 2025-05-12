@@ -76,18 +76,18 @@ public class ProdutosDAO {
 
     }
 
-    public int venderProdutos(ProdutosDTO pro) {
+    public int venderProdutos(int pro) {
 
         int status;
         String sql = "Update produtos Set status = ? where id = ?";
 
-        if (!pro.getStatus().equals("Vendido")) {
             try {
                 prep = conn.connectDB().prepareStatement(sql);
                 prep.setString(1, "Vendido");
-                prep.setInt(2, pro.getId());
+                prep.setInt(2, pro);
 
                 status = prep.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Venda Efetuada com Sucesso");
                 return status;
 
             } catch (SQLException ex) {
@@ -95,12 +95,9 @@ public class ProdutosDAO {
                 return 0;
             }
 
-        } else {
-            JOptionPane.showMessageDialog(null, "Produto Já está Vendido, Venda Não Efetuada");
-            return 0;
         }
 
-    }
+    
 
         public List<ProdutosDTO> listarProdutosVendidos() {
         String sql = "SELECT * FROM produtos where status = ?";
